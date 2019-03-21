@@ -1,0 +1,9 @@
+{
+  "name": "teraz",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "lerna": "^3.13.1"
+  }
+}

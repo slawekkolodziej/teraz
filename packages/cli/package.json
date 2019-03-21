@@ -1,0 +1,16 @@
+{
+  "name": "@teraz/cli",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "author": {
+    "name": "Slawek Kolodziej",
+    "email": "hfrntt@gmail.com"
+  },
+  "dependencies": {
+    "@now/build-utils": "^0.4.36",
+    "@now/next": "^0.1.2",
+    "@now/node": "^0.5.1"
+  },
+  "devDependencies": {}
+}

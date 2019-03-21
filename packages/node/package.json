@@ -1,0 +1,10 @@
+{
+  "name": "@teraz/node",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "author": {
+    "name": "Slawek Kolodziej",
+    "email": "hfrntt@gmail.com"
+  }
+}
