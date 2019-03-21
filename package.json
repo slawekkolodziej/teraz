@@ -5,5 +5,8 @@
   "license": "MIT",
   "dependencies": {
     "lerna": "^3.13.1"
+  },
+  "scripts": {
+    "publish": "lerna publish --access public"
   }
 }

@@ -1,11 +1,11 @@
 {
   "name": "@teraz/node-bridge",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "index.js",
   "license": "MIT",
   "author": {
     "name": "Slawek Kolodziej",
     "email": "hfrntt@gmail.com"
   },
-  "gitHead": "36311113bb20386f7c635390ad75c92b43f7f142"
+  "gitHead": "fb34a1a854ea90e9bb5fa03ae0997a02013a3d7d"
 }
