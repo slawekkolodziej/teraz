@@ -7,7 +7,7 @@
     "lerna": "^3.13.1"
   },
   "scripts": {
-    "lerna:publish": "lerna publish -- --access public"
+    "lerna:publish": "lerna publish"
   },
   "workspaces": [
     "packages/*"

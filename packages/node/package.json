@@ -1,11 +1,11 @@
 {
   "name": "@teraz/node",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "main": "index.js",
   "license": "MIT",
   "author": {
     "name": "Slawek Kolodziej",
     "email": "hfrntt@gmail.com"
   },
-  "gitHead": "567038ee0d546d2c3e7bf5c96eeea1d92cc47fa9"
+  "gitHead": "f6c15553d44e8ad8502c18043e2ce41092f739bb"
 }
