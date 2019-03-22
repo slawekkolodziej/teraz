@@ -1,0 +1,13 @@
+#!/bin/bash
+
+yarn patch-package
+
+bridge_entrypoint="$(node -p 'require.resolve("@now/node-bridge")')"
+bridge_main="$(dirname "$bridge_entrypoint")/bridge.js"
+bridge_main_map="$(dirname "$bridge_entrypoint")/bridge.js.map"
+
+mkdir dist
+
+cp $bridge_entrypoint dist
+cp $bridge_main dist
+cp $bridge_main_map dist
