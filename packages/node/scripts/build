@@ -5,7 +5,7 @@ yarn patch-package
 index="$(node -p 'require.resolve("@now/node")')"
 launcher="$(dirname "$index")/launcher.js"
 
-mkdir dist
+mkdir -p dist
 
 cp $index dist
 cp $launcher dist
