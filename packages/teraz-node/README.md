@@ -1,1 +1,1 @@
-Wrapper around @now/node
+Wrapper around @now/node, replaces @now/node-bridge with @teraz/node-bridge and updates arguments passed to yarn
