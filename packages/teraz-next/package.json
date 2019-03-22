@@ -17,5 +17,8 @@
   "devDependencies": {
     "@now/next": "^0.1.2",
     "patch-package": "^6.0.5"
+  },
+  "dependencies": {
+    "@teraz/node-bridge": "^0.0.2"
   }
 }

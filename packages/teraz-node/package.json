@@ -15,7 +15,8 @@
     "prepublish": "yarn build"
   },
   "dependencies": {
-    "@now/node": "^0.5.1"
+    "@now/node": "^0.5.1",
+    "@teraz/node-bridge": "^0.0.2"
   },
   "devDependencies": {
     "patch-package": "^6.0.5"

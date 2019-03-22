@@ -17,6 +17,11 @@
   resolved "https://registry.yarnpkg.com/@now/node-bridge/-/node-bridge-1.0.0.tgz#3e7c1cd5760dc681febb4689201bbea6fdd35230"
   integrity sha512-tHcr0GlgNlE8ucjuw4w7mseJ68R4VkxuHbFQpSUJ5cZqTJbKggtsdv9UL3u5uBJBXgqDmidlEepF3wOm7A99IQ==
 
+"@teraz/node-bridge@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@teraz/node-bridge/-/node-bridge-0.0.2.tgz#565e4653a3b0809a1272b78ba9c4860a5b99ca21"
+  integrity sha512-t2p7RF7cY4lhkdjy3+AK3jj1Z+IbZ0HSQiOPhL/RGMbeDyCkog2rnDrAubLEjHjI+xTysUqS64NOf8vDcyrJQQ==
+
 "@yarnpkg/lockfile@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@yarnpkg/lockfile/-/lockfile-1.1.0.tgz#e77a97fbd345b76d83245edcd17d393b1b41fb31"

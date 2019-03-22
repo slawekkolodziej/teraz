@@ -15,6 +15,11 @@
     "@now/node-bridge" "1.0.0"
     fs-extra "7.0.1"
 
+"@teraz/node-bridge@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@teraz/node-bridge/-/node-bridge-0.0.2.tgz#565e4653a3b0809a1272b78ba9c4860a5b99ca21"
+  integrity sha512-t2p7RF7cY4lhkdjy3+AK3jj1Z+IbZ0HSQiOPhL/RGMbeDyCkog2rnDrAubLEjHjI+xTysUqS64NOf8vDcyrJQQ==
+
 "@yarnpkg/lockfile@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@yarnpkg/lockfile/-/lockfile-1.1.0.tgz#e77a97fbd345b76d83245edcd17d393b1b41fb31"
