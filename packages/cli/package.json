@@ -16,5 +16,8 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "bin": {
+    "teraz": "index.js"
   }
 }
