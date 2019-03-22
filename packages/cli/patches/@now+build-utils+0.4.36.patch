@@ -1,6 +1,8 @@
---- run-user-scripts.js	2019-03-22 18:25:37.000000000 +0100
-+++ my-run-user-scripts.js	2019-03-22 18:33:34.000000000 +0100
-@@ -73,7 +73,11 @@
+diff --git a/node_modules/@now/build-utils/fs/run-user-scripts.js b/node_modules/@now/build-utils/fs/run-user-scripts.js
+index a71a564..14d5d93 100644
+--- a/node_modules/@now/build-utils/fs/run-user-scripts.js
++++ b/node_modules/@now/build-utils/fs/run-user-scripts.js
+@@ -73,7 +73,11 @@ async function installDependencies(destPath, args = []) {
      await spawnAsync('npm', ['install'].concat(commandArgs), destPath);
      await spawnAsync('npm', ['cache', 'clean', '--force'], destPath);
    } else {

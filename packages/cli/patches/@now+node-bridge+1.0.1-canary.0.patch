@@ -1,0 +1,12 @@
+diff --git a/node_modules/@now/node-bridge/bridge.js b/node_modules/@now/node-bridge/bridge.js
+index 3599518..9a8bfec 100644
+--- a/node_modules/@now/node-bridge/bridge.js
++++ b/node_modules/@now/node-bridge/bridge.js
+@@ -123,6 +123,7 @@ class Bridge {
+                             response.headers['content-length'] = String(bodyBuffer.length);
+                         }
+                         resolve({
++                            isBase64Encoded: true,
+                             statusCode: response.statusCode || 200,
+                             headers: response.headers,
+                             body: bodyBuffer.toString('base64'),
