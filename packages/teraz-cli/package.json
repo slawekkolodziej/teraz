@@ -10,9 +10,6 @@
   "bin": {
     "teraz": "./bin/teraz"
   },
-  "scripts": {
-    "postinstall": "patch-package"
-  },
   "publishConfig": {
     "access": "public"
   },
