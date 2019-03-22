@@ -9,12 +9,12 @@ async function getWritableDirectory () {
   return makeTempDir(path.join(os.tmpdir(), 'teraz-'))
 }
 
-function checksum (str, algorithm, encoding) {
-  return crypto
-    .createHash(algorithm || 'md5')
-    .update(str, 'utf8')
-    .digest(encoding || 'hex')
-}
+// function checksum (str, algorithm, encoding) {
+//   return crypto
+//     .createHash(algorithm || 'md5')
+//     .update(str, 'utf8')
+//     .digest(encoding || 'hex')
+// }
 
 function runAnalyze (wrapper, context) {
   if (wrapper.analyze) {
@@ -67,11 +67,11 @@ async function main (inputPath) {
       const src = sources[j]
       const entrypoint = src.replace(/^\//, '')
       const wrapper = require(build.use)
-      const analyzeResult = runAnalyze(wrapper, {
-        files: inputFiles,
-        entrypoint,
-        config: build.config
-      })
+      // const analyzeResult = runAnalyze(wrapper, {
+      //   files: inputFiles,
+      //   entrypoint,
+      //   config: build.config
+      // })
       const workPath = await getWritableDirectory()
       const buildResult = await wrapper.build({
         files: inputFiles,
@@ -80,7 +80,7 @@ async function main (inputPath) {
         workPath
       })
 
-      const zipPath = path.join('./dist', path.basename(src)) + '.zip'
+      const zipPath = path.join(inputPath, 'dist', path.basename(src)) + '.zip'
       const fd = fs.openSync(zipPath, 'w')
 
       fs.writeSync(fd, buildResult[entrypoint].zipBuffer)

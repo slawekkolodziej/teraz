@@ -10,7 +10,9 @@
   "dependencies": {
     "@now/build-utils": "^0.4.36",
     "@now/next": "^0.1.2",
-    "@now/node": "^0.5.1"
+    "@now/node": "^0.5.1",
+    "@teraz/node": "^0.0.4",
+    "@teraz/node-bridge": "^0.0.4"
   },
   "publishConfig": {
     "access": "public"

@@ -8,8 +8,5 @@
   },
   "scripts": {
     "lerna:publish": "lerna publish"
-  },
-  "workspaces": [
-    "packages/*"
-  ]
+  }
 }

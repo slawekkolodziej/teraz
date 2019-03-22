@@ -41,6 +41,16 @@
     "@now/node-bridge" "1.0.0"
     fs-extra "7.0.1"
 
+"@teraz/node-bridge@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@teraz/node-bridge/-/node-bridge-0.0.4.tgz#669ca591f450011489ac88989ab16349a86ae41b"
+  integrity sha512-tXqdhiGU05c30La+4vnKJM7Jf1VVmqCfjxxEIjQ7RNwh0mF47Rmo1Q7ImFPTNtTo7bKF+/oXOhDRqhlErl5Vcg==
+
+"@teraz/node@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@teraz/node/-/node-0.0.4.tgz#b67d1d401b36bd29a6f8f5b1bcb09adad442d3e1"
+  integrity sha512-v76simgmeAFMGeXjazn6oIe96AYRslc2y54GPdqIQ08QUwxTrFmWLuCeqAD5kF9vxurA/t7J1/leikVTfhcDgA==
+
 async-retry@1.2.3:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/async-retry/-/async-retry-1.2.3.tgz#a6521f338358d322b1a0012b79030c6f411d1ce0"
