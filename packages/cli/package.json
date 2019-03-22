@@ -7,12 +7,14 @@
     "name": "Slawek Kolodziej",
     "email": "hfrntt@gmail.com"
   },
+  "scripts": {
+    "postinstall": "./scripts/postinstall"
+  },
   "dependencies": {
     "@now/build-utils": "^0.4.36",
     "@now/next": "^0.1.2",
     "@now/node": "^0.5.1",
-    "@teraz/node": "^0.0.5",
-    "@teraz/node-bridge": "^0.0.4",
+    "@now/node-bridge": "^1.0.1-canary.0",
     "async-sema": "^3.0.0",
     "camelcase": "^5.2.0",
     "paralleljs": "^0.2.1",

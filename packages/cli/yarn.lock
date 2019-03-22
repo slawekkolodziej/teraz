@@ -150,6 +150,11 @@
   resolved "https://registry.yarnpkg.com/@now/node-bridge/-/node-bridge-1.0.0.tgz#3e7c1cd5760dc681febb4689201bbea6fdd35230"
   integrity sha512-tHcr0GlgNlE8ucjuw4w7mseJ68R4VkxuHbFQpSUJ5cZqTJbKggtsdv9UL3u5uBJBXgqDmidlEepF3wOm7A99IQ==
 
+"@now/node-bridge@^1.0.1-canary.0":
+  version "1.0.1-canary.0"
+  resolved "https://registry.yarnpkg.com/@now/node-bridge/-/node-bridge-1.0.1-canary.0.tgz#15e6488f60dcb0c145d2e277978334d1537e794d"
+  integrity sha512-J4qsuNZ1KTHdbRL0iImRIVKUprq5CmAWqIqaOz/kV5maDxvd2H7ede+65wFP0qLrpHrYOFKGcfTo+gL4SubXTg==
+
 "@now/node@^0.5.1":
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/@now/node/-/node-0.5.1.tgz#4dc0db8c2fb89f2bebfa6798b29b8361c664ab3a"
@@ -157,16 +162,6 @@
   dependencies:
     "@now/node-bridge" "1.0.0"
     fs-extra "7.0.1"
-
-"@teraz/node-bridge@^0.0.4":
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@teraz/node-bridge/-/node-bridge-0.0.4.tgz#669ca591f450011489ac88989ab16349a86ae41b"
-  integrity sha512-tXqdhiGU05c30La+4vnKJM7Jf1VVmqCfjxxEIjQ7RNwh0mF47Rmo1Q7ImFPTNtTo7bKF+/oXOhDRqhlErl5Vcg==
-
-"@teraz/node@^0.0.5":
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/@teraz/node/-/node-0.0.5.tgz#ff11ac4de2c96d959f34b8c37dc514b8b281920c"
-  integrity sha512-kIXIm4mbMKGmKIP+297RKcRdPMqf5nL0uWrOlv6bRyoKVEqzJnXmMxzvrrKDITFfLrTcu/uY9K3/lKRimiy0lw==
 
 ansi-styles@^3.2.1:
   version "3.2.1"
