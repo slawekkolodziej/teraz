@@ -6,6 +6,8 @@ else
   NODE_MODULES="../node_modules"
 fi
 
+touch .patched
+
 patch \
     $NODE_MODULES/@now/build-utils/fs/run-user-scripts.js \
     ./patches/@now/build-utils/fs/run-user-scripts.js
