@@ -4,6 +4,7 @@
   "packages": ["packages/*"],
   "command": {
     "publish": {
+      "access": "public",
       "npmClient": "npm",
       "allowBranch": ["master"],
       "registry": "https://registry.npmjs.org/"
