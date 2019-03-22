@@ -1,2 +1,3 @@
 #!/usr/bin/env node
+const path = require('path')
 require('../src/index.js')(path.join(process.cwd(), process.argv[2] || '.'))
