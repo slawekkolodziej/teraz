@@ -1,7 +1,7 @@
 {
   "name": "@teraz/node",
   "version": "0.0.6",
-  "main": "index.js",
+  "main": "dist/index.js",
   "license": "MIT",
   "author": {
     "name": "Slawek Kolodziej",
@@ -9,5 +9,15 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "scripts": {
+    "build": "scripts/build",
+    "prepublish": "yarn build"
+  },
+  "dependencies": {
+    "@now/node": "^0.5.1"
+  },
+  "devDependencies": {
+    "patch-package": "^6.0.5"
   }
 }

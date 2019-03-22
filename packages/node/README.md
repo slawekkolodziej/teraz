@@ -1,1 +1,1 @@
-Obsolete, use @now/node instead
+Wrapper around @now/node
