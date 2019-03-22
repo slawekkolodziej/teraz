@@ -1,6 +1,6 @@
 {
   "name": "@teraz/cli",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "main": "index.js",
   "license": "MIT",
   "author": {
@@ -15,8 +15,8 @@
   },
   "dependencies": {
     "@now/build-utils": "^0.4.36",
-    "@teraz/next": "^0.0.2",
-    "@teraz/node": "^0.0.2",
+    "@teraz/next": "^0.0.3",
+    "@teraz/node": "^0.0.3",
     "async-sema": "^3.0.0",
     "camelcase": "^5.2.0",
     "paralleljs": "^0.2.1",
