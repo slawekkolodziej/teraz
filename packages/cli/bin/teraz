@@ -1,0 +1,2 @@
+#!/usr/bin/env node
+require('../src/index.js')(path.join(process.cwd(), process.argv[2] || '.'))

@@ -16,12 +16,12 @@ async function getWritableDirectory () {
 //     .digest(encoding || 'hex')
 // }
 
-function runAnalyze (wrapper, context) {
-  if (wrapper.analyze) {
-    return wrapper.analyze(context)
-  }
-  return null
-}
+// function runAnalyze (wrapper, context) {
+//   if (wrapper.analyze) {
+//     return wrapper.analyze(context)
+//   }
+//   return null
+// }
 
 function getIgnoredFiles (inputPath) {
   const ignoreFile = path.join(inputPath, '.nowignore')
@@ -89,4 +89,4 @@ async function main (inputPath) {
   }
 }
 
-main(path.join(process.cwd(), process.argv[2] || '.'))
+module.exports = main
