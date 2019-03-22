@@ -1,9 +1,15 @@
 #!/bin/bash
 
+if [ -d "./node_modules" ]; then
+  NODE_MODULES="./node_modules"
+else
+  NODE_MODULES="../node_modules"
+fi
+
 patch \
-    ./node_modules/@now/build-utils/fs/run-user-scripts.js \
+    $NODE_MODULES/@now/build-utils/fs/run-user-scripts.js \
     ./patches/@now/build-utils/fs/run-user-scripts.js
 
 patch \
-    ./node_modules/@now/node-bridge/bridge.js \
+    $NODE_MODULES/@now/node-bridge/bridge.js \
     ./patches/@now/node-bridge/bridge.js
