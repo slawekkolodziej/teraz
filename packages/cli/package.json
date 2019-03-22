@@ -7,8 +7,14 @@
     "name": "Slawek Kolodziej",
     "email": "hfrntt@gmail.com"
   },
+  "bin": {
+    "teraz": "./bin/teraz"
+  },
   "scripts": {
-    "prepare": "patch-package"
+    "postinstall": "patch-package"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "dependencies": {
     "@now/build-utils": "^0.4.36",
@@ -19,14 +25,8 @@
     "camelcase": "^5.2.0",
     "paralleljs": "^0.2.1",
     "patch-package": "^6.0.5",
-    "postinstall-prepare": "^1.0.1",
+    "postinstall-postinstall": "^2.0.0",
     "ramda": "^0.26.1",
     "workerpool": "^3.1.2"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "bin": {
-    "teraz": "./bin/teraz"
   }
 }
