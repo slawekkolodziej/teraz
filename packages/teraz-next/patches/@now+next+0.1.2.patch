@@ -1,0 +1,60 @@
+diff --git a/node_modules/@now/next/index.js b/node_modules/@now/next/index.js
+index e7c4a7a..69b7e6b 100644
+--- a/node_modules/@now/next/index.js
++++ b/node_modules/@now/next/index.js
+@@ -156,7 +156,7 @@ exports.build = async ({ files, workPath, entrypoint }) => {
+     }
+ 
+     console.warn(
+-      "WARNING: your application is being deployed in @now/next's legacy mode. http://err.sh/zeit/now-builders/now-next-legacy-mode",
++      "WARNING: your application is being deployed in @teraz/next's legacy mode. http://err.sh/zeit/now-builders/now-next-legacy-mode",
+     );
+ 
+     console.log('normalizing package.json');
+@@ -181,13 +181,13 @@ exports.build = async ({ files, workPath, entrypoint }) => {
+   }
+ 
+   console.log('installing dependencies...');
+-  await runNpmInstall(entryPath, ['--prefer-offline']);
++  await runNpmInstall(entryPath, ['--prefer-offline', '--cache-folder', '.yarn-cache', '--silent']);
+   console.log('running user script...');
+   await runPackageJsonScript(entryPath, 'now-build');
+ 
+   if (isLegacy) {
+     console.log('running npm install --production...');
+-    await runNpmInstall(entryPath, ['--prefer-offline', '--production']);
++    await runNpmInstall(entryPath, ['--prefer-offline', '--production', '--cache-folder', '.yarn-cache', '--silent']);
+   }
+ 
+   if (process.env.NPM_AUTH_TOKEN) {
+@@ -219,7 +219,7 @@ exports.build = async ({ files, workPath, entrypoint }) => {
+       file => file.startsWith('node_modules/.cache'),
+     );
+     const launcherFiles = {
+-      'now__bridge.js': new FileFsRef({ fsPath: require('@now/node-bridge') }),
++      'now__bridge.js': new FileFsRef({ fsPath: require('@teraz/node-bridge') }),
+     };
+     const nextFiles = {
+       ...nodeModules,
+@@ -281,7 +281,7 @@ exports.build = async ({ files, workPath, entrypoint }) => {
+   } else {
+     console.log('preparing lambda files...');
+     const launcherFiles = {
+-      'now__bridge.js': new FileFsRef({ fsPath: require('@now/node-bridge') }),
++      'now__bridge.js': new FileFsRef({ fsPath: require('@teraz/node-bridge') }),
+       'now__launcher.js': new FileFsRef({
+         fsPath: path.join(__dirname, 'launcher.js'),
+       }),
+diff --git a/node_modules/@now/next/utils.js b/node_modules/@now/next/utils.js
+index a602f31..fdd6c1a 100644
+--- a/node_modules/@now/next/utils.js
++++ b/node_modules/@now/next/utils.js
+@@ -16,7 +16,7 @@ function validateEntrypoint(entrypoint) {
+     && !/next\.config\.js$/.exec(entrypoint)
+   ) {
+     throw new Error(
+-      'Specified "src" for "@now/next" has to be "package.json" or "next.config.js"',
++      'Specified "src" for "@teraz/next" has to be "package.json" or "next.config.js"',
+     );
+   }
+ }

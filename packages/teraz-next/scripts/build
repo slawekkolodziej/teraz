@@ -1,0 +1,17 @@
+#!/bin/bash
+
+yarn patch-package
+
+index="$(node -p 'require.resolve("@now/next")')"
+launcher="$(dirname "$index")/launcher.js"
+legacyLauncher="$(dirname "$index")/legacy-launcher.js"
+legacyVersions="$(dirname "$index")/legacy-versions.js"
+utils="$(dirname "$index")/utils.js"
+
+mkdir -p dist
+
+cp $index dist
+cp $launcher dist
+cp $legacyLauncher dist
+cp $legacyVersions dist
+cp $utils dist

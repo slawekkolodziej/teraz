@@ -1,0 +1,22 @@
+{
+  "name": "@teraz/next",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "author": {
+    "name": "Slawek Kolodziej",
+    "email": "hfrntt@gmail.com"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "scripts/build",
+    "prepublish": "yarn build"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@now/next": "^0.1.2",
+    "patch-package": "^6.0.5"
+  }
+}
