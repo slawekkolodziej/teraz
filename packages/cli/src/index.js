@@ -80,11 +80,15 @@ async function main (inputPath) {
         workPath
       })
 
-      const zipPath = path.join(inputPath, 'dist', path.basename(src)) + '.zip'
-      const fd = fs.openSync(zipPath, 'w')
+      console.log(buildResult)
 
-      fs.writeSync(fd, buildResult[entrypoint].zipBuffer)
-      fs.closeSync(fd)
+      if (buildResult[entrypoint].zipBuffer) {
+        const zipPath =
+          path.join(inputPath, 'dist', path.basename(src)) + '.zip'
+        const fd = fs.openSync(zipPath, 'w')
+        fs.writeSync(fd, buildResult[entrypoint].zipBuffer)
+        fs.closeSync(fd)
+      }
     }
   }
 }
