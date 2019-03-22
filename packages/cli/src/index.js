@@ -1,14 +1,7 @@
-const fs = require('fs')
-const os = require('os')
-const path = require('path')
-const { promisify } = require('util')
+const workerpool = require('workerpool')
 const glob = require('@now/build-utils/fs/glob')
-const makeTempDir = promisify(fs.mkdtemp)
-
-async function getWritableDirectory () {
-  return makeTempDir(path.join(os.tmpdir(), 'teraz-'))
-}
-
+const getIgnoredFiles = require('./utils/getIgnoredFiles')
+const expandBuildPaths = require('./utils/expandBuildPaths')
 // function checksum (str, algorithm, encoding) {
 //   return crypto
 //     .createHash(algorithm || 'md5')
@@ -23,74 +16,64 @@ async function getWritableDirectory () {
 //   return null
 // }
 
-function getIgnoredFiles (inputPath) {
-  const ignoreFile = path.join(inputPath, '.nowignore')
-
-  if (!fs.existsSync(ignoreFile)) {
-    return []
-  }
-
-  const ignoredFiles = fs
-    .readFileSync(ignoreFile)
-    .toString()
-    .split('\n')
-
-  return ignoredFiles.map(file => {
-    if (!fs.existsSync(file)) {
-      return file
-    }
-
-    const fd = fs.openSync(path.join(inputPath, file), 'r')
-    const stats = fs.fstatSync(fd)
-    fs.closeSync(fd)
-    return stats.isDirectory() ? file + '/**/*' : file
-  })
-}
-
 async function main (inputPath) {
   const ignore = getIgnoredFiles(inputPath)
   const inputFiles = await glob('**', {
     cwd: inputPath,
     ignore
   })
-
   const nowJsonRef = inputFiles['now.json']
   const nowJson = require(nowJsonRef.fsPath)
+  const builds = await expandBuildPaths(nowJson.builds, inputPath)
 
-  for (let i = 0; i < nowJson.builds.length; i++) {
-    let build = nowJson.builds[i]
-
-    const buildFiles = await glob(build.src, inputPath)
-    const sources = Object.keys(buildFiles)
-
-    for (let j = 0; j < sources.length; j++) {
-      const src = sources[j]
-      const entrypoint = src.replace(/^\//, '')
-      const wrapper = require(build.use)
-      // const analyzeResult = runAnalyze(wrapper, {
-      //   files: inputFiles,
-      //   entrypoint,
-      //   config: build.config
-      // })
-      const workPath = await getWritableDirectory()
-      const buildResult = await wrapper.build({
-        files: inputFiles,
-        entrypoint,
-        config: build.config,
-        workPath
-      })
-
-      console.log(buildResult)
-
-      if (buildResult[entrypoint].zipBuffer) {
-        const zipPath =
-          path.join(inputPath, 'dist', path.basename(src)) + '.zip'
-        const fd = fs.openSync(zipPath, 'w')
-        fs.writeSync(fd, buildResult[entrypoint].zipBuffer)
-        fs.closeSync(fd)
-      }
-    }
+  const context = {
+    inputFiles,
+    inputPath,
+    ignore
   }
+
+  console.log('Files to build:')
+  builds.forEach(build => console.log(`- ${build.src}`))
+
+  const buildPool = workerpool.pool(__dirname + '/workers/build.js')
+
+  // const results =
+  await Promise.all(
+    builds.map(build =>
+      buildPool.exec('build', [build, context]).catch(function (err) {
+        console.error(`FAILED: [${build.src}]`, err)
+      })
+    )
+  )
+
+  buildPool.terminate()
+  console.log('DONE')
+
+  // for (let j = 0; j < builds.length; j++) {
+  //   const entrypoint = builds.src.replace(/^\//, '')
+  //   const wrapper = require(build.use)
+  //   // const analyzeResult = runAnalyze(wrapper, {
+  //   //   files: inputFiles,
+  //   //   entrypoint,
+  //   //   config: build.config
+  //   // })
+  //   const workPath = await getWritableDirectory()
+  //   const buildResult = await wrapper.build({
+  //     files: inputFiles,
+  //     entrypoint,
+  //     config: build.config,
+  //     workPath
+  //   })
+
+  //   console.log(buildResult)
+
+  //   if (buildResult[entrypoint].zipBuffer) {
+  //     const zipPath = path.join(inputPath, 'dist', path.basename(src)) + '.zip'
+  //     const fd = fs.openSync(zipPath, 'w')
+  //     fs.writeSync(fd, buildResult[entrypoint].zipBuffer)
+  //     fs.closeSync(fd)
+  //   }
+  // }
 }
 
 module.exports = main
