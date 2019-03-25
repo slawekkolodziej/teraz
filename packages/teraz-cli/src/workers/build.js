@@ -33,7 +33,7 @@ async function build (build, context) {
     if (buildResult.zipBuffer) {
       handleLambda(buildResult, entrypoint, context)
     } else {
-      console.log(buildResult, entrypoint, context)
+      console.log(buildResult, entrypoint)
     }
   })
 }
