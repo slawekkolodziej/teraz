@@ -5,6 +5,14 @@ const camelcase = require('camelcase')
 const getWritableDirectory = require('../utils/getWritableDirectory')
 const recreateInputFiles = require('../utils/recreateInputFiles')
 
+function handleLambda (buildResult, entrypoint, { inputPath }) {
+  const lambdaName = camelcase(entrypoint.split('/'))
+  const zipPath = path.join(inputPath, 'dist', lambdaName) + '.zip'
+  const fd = fs.openSync(zipPath, 'w')
+  fs.writeSync(fd, buildResult.zipBuffer)
+  fs.closeSync(fd)
+}
+
 async function build (build, context) {
   const { inputFiles: _inputFiles, inputPath } = context
 
@@ -23,11 +31,9 @@ async function build (build, context) {
 
   Object.entries(buildResults).map(([entrypoint, buildResult]) => {
     if (buildResult.zipBuffer) {
-      const lambdaName = camelcase(entrypoint.split('/'))
-      const zipPath = path.join(inputPath, 'dist', lambdaName) + '.zip'
-      const fd = fs.openSync(zipPath, 'w')
-      fs.writeSync(fd, buildResult.zipBuffer)
-      fs.closeSync(fd)
+      handleLambda(buildResult, entrypoint, context)
+    } else {
+      console.log(buildResult, entrypoint, context)
     }
   })
 }
