@@ -148,17 +148,25 @@
     "@now/node-bridge" "1.0.0"
     fs-extra "7.0.1"
 
-"@teraz/next@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@teraz/next/-/next-0.0.2.tgz#18da62314f7df4770b55fac6dc34f59cf441b9b0"
-  integrity sha512-l90IYl8ADQxGZ1O4TloDiRrzq0mFVntZIkrYoGheiu5hfU3xJBM/KqpTqOi/VcS0yZHNwKAbv25wlSig2RYauw==
+"@teraz/next@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@teraz/next/-/next-0.0.3.tgz#b7b8fef0ef9cbe74c26b508dc33e807d1d85c6c1"
+  integrity sha512-X2LJ+WG0RR0JnxWbKjPzLMzwVuKgecsAzrzm+uPyTDEqziDNQZ07wtD0gOr7kKwo14+OEo7kdR912BiIhbfknQ==
+  dependencies:
+    "@teraz/node-bridge" "^0.0.2"
 
-"@teraz/node@^0.0.2":
+"@teraz/node-bridge@^0.0.2":
   version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@teraz/node/-/node-0.0.2.tgz#cf4abdb9a2b9410806bdb64036b982c52e105a50"
-  integrity sha512-x33xX7E/U/8S16alR+fGqdZBlLcc/TqT9Gz6YajEizsl4+Am1j9KRjUuhZe8N37yskxwcGU/AC2C+cuXjIPfYw==
+  resolved "https://registry.yarnpkg.com/@teraz/node-bridge/-/node-bridge-0.0.2.tgz#565e4653a3b0809a1272b78ba9c4860a5b99ca21"
+  integrity sha512-t2p7RF7cY4lhkdjy3+AK3jj1Z+IbZ0HSQiOPhL/RGMbeDyCkog2rnDrAubLEjHjI+xTysUqS64NOf8vDcyrJQQ==
+
+"@teraz/node@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@teraz/node/-/node-0.0.3.tgz#7a0259ab5691b208760355ce7ce56d722a138154"
+  integrity sha512-amh1d0cw/Q9H/WdQ723rAVPy8PQ3p/0M6AkpBFra2tXpKcJ58JaIUjn0GzChWx5VM69vAK6URx+bP/sl2h9SAQ==
   dependencies:
     "@now/node" "^0.5.1"
+    "@teraz/node-bridge" "^0.0.2"
 
 "@yarnpkg/lockfile@^1.1.0":
   version "1.1.0"
@@ -687,9 +695,9 @@ latest-version@^3.0.0:
     package-json "^4.0.0"
 
 lodash@^4.17.11:
-  version "4.17.11"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
-  integrity sha512-cQKh8igo5QUhZ7lg38DYWAxMvjSAKG0A8wGSVimP07SIUEK2UO+arSRKbRZWtelMtN5V0Hkwh5ryOto/SshYIg==
+  version "4.17.14"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.14.tgz#9ce487ae66c96254fe20b599f21b6816028078ba"
+  integrity sha512-mmKYbW3GLuJeX+iGP+Y7Gp1AiGHGbXHCOh/jZmrawMmsE7MS4znI3RL2FsjbqOyMayHInjOeykW7PEajUk1/xw==
 
 lowercase-keys@^1.0.0:
   version "1.0.1"
